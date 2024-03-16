@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:myapp/login_screen.dart';
 
 class loginView extends StatelessWidget {
   const loginView({super.key});
@@ -6,17 +8,58 @@ class loginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 46, 178, 28),
-        title: Text("Muhammad Sameer"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            child: Image.asset("asset/image/welcomeimage.png"),
+          ),
+          Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Title(
+                  color: Colors.blue,
+                  child: Text(
+                    "Discover Your Dream Job here",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Title(
+                  color: Colors.black,
+                  child: Text(
+                    "Explore all the existing job roles based on your interest and study major",
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => loginscreen()));
+                  },
+                  child: Text("Login"),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    print({"object"});
+                  },
+                  child: Text("Register"),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
-      body: Container(
-          height: 200,
-          width: 200,
-          color: Colors.blue,
-          child: Center(
-            child: Text("Muhammad Sameer"),
-          )),
     );
   }
 }
