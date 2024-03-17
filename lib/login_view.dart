@@ -47,6 +47,10 @@ class loginView extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => loginscreen()));
                   },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blue),
+                  ),
                   child: Text("Login"),
                 ),
                 ElevatedButton(

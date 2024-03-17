@@ -84,6 +84,10 @@ class loginscreen extends StatelessWidget {
                   onPressed: () {
                     print("sameer");
                   },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blue),
+                  ),
                   child: Text("Sign in"),
                 ),
               ),
